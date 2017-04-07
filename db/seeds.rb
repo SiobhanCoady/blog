@@ -12,7 +12,7 @@ Category.create(
 categories = Category.all
 
 20.times do
-  Post.create title: Faker::Hipster.sentence(4),
+  Post.create title: Faker::Hipster.sentence(2),
               body: Faker::Hipster.paragraph(75),
               category: categories.sample
 end
@@ -29,5 +29,5 @@ end
 
 comments_count = Comment.count
 
-puts Cowsay.say 'Created 20 questions', :elephant
+puts Cowsay.say 'Created 20 posts', :elephant
 puts Cowsay.say "Created #{comments_count} comments", :elephant

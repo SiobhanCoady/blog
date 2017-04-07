@@ -70,6 +70,16 @@
     <div class="col-lg-2 col-md-2 hidden-sm hidden-xs"></div>
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
       <h3 class="comment-padding">Leave a Comment...</h3>
+
+
+      <%= form_for [@post, @comment] do |f| %>
+        <div class="form-group comment-padding">
+          <%= f.label :comment %>
+          <%= f.text_area :body, class: 'form-control' %>
+        </div>
+        <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
+      <% end %>
+
       <form>
         <div class="form-group comment-padding">
           <textarea name="comment" class="form-control" rows="8" cols="80"></textarea>
