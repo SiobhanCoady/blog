@@ -38,7 +38,9 @@
   <div class="row">
     <% @remaining_posts.each do |post| %>
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <%= image_tag "#{rand(1..8)}.JPG", class: "img-responsive" %>
+        <%= link_to post_path(post.id) do %>
+          <%= image_tag "#{rand(1..8)}.JPG", class: "img-responsive" %>
+        <% end %>
         <div class="pull-left">
           <h3 class="link"><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a> 456</h3>
         </div>

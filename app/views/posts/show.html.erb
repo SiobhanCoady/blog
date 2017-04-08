@@ -74,23 +74,13 @@
 
       <%= form_for [@post, @comment] do |f| %>
         <div class="form-group comment-padding">
-          <%= f.label :comment %>
-          <%= f.text_area :body, class: 'form-control' %>
+          <%= f.text_area :body, class: 'form-control', rows: '4' %>
         </div>
-        <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
+        <div class="form-group comment-padding">
+          <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
+        </div>
       <% end %>
 
-      <form>
-        <div class="form-group comment-padding">
-          <textarea name="comment" class="form-control" rows="8" cols="80"></textarea>
-        </div>
-        <div class="form-group row comment-padding">
-          <label for="name" class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-form-label"><h3>Full Name</h3></label>
-          <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
-            <input type="text" class="form-control" name="name" id="name">
-          </div>
-        </div>
-      </form>
       <hr>
 
       <% @post.comments.each do |comment| %>

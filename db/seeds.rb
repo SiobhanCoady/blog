@@ -12,7 +12,7 @@ Category.create(
 categories = Category.all
 
 20.times do
-  Post.create title: Faker::Hipster.sentence(2),
+  Post.create title: Faker::Hipster.word,
               body: Faker::Hipster.paragraph(75),
               category: categories.sample
 end
