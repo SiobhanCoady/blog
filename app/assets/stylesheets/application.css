@@ -55,3 +55,6 @@ label > h3 {
 .no-form-lines {
   border: none !important;
 }
+.hello-user {
+  padding-left: 15px;
+}
