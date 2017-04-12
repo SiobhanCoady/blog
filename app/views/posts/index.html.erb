@@ -15,7 +15,7 @@
         <div class="col-sm-12 col-xs-12">
           <h1><%= @most_recent_post.title %></h1>
           <p><%= truncate(@most_recent_post.body, length: 500) { link_to "Continue", post_path(@most_recent_post.id) } %></a>
-          <p><a href="#">Post Author Name</a>
+          <p><a href="#"><%= @most_recent_post.user.first_name %></a>
           <br><%= standard_date_format(@most_recent_post.created_at) %></p>
         </div>
       </div>
@@ -52,7 +52,7 @@
           <div class="col-sm-12 col-xs-12">
             <h1><%= post.title %></h1>
             <p><%= truncate(post.body, length: 200) { link_to "Continue", post_path(post.id) } %></p>
-            <p><a href="#">Post Author Name</a>
+            <p><a href="#"><%= post.user.first_name %></a>
               <br><%= standard_date_format(post.created_at) %></p>
             </div>
           </div>
