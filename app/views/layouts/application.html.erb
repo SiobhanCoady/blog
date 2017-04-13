@@ -41,7 +41,9 @@
 
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <li class="navbar-text hello-user">Hello, <%= current_user.first_name %></li>
+              <li class="navbar-text hello-user">
+                <span>Hello, <%= link_to current_user.first_name, edit_user_path(current_user.id) %></span>
+              </li>
               <li><%= link_to "Logout", sessions_path, method: :delete,
                        data: {confirm: "Are you sure you want to log out?"}%></li>
             <% else %>

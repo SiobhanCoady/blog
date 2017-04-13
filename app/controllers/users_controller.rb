@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Logged In!"
+      redirect_to root_path, notice: 'Logged In!'
     else
       render :new
     end
@@ -19,9 +19,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    # debugger
     @user = User.find params[:id]
-    byebug
     if !(can? :edit, @user)
       redirect_to root_path, alert: 'Access denied'
     elsif @user.update(user_params)
