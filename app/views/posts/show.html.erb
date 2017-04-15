@@ -97,6 +97,9 @@
           </div>
           <div class="col-sm-9 col-xs-9">
             <p><%= comment.body %></p>
+            <% if can? :destroy, comment %>
+              <%= link_to "Delete", post_comment_path(@post, comment), method: :delete, data: {confirm: "Are you sure?"} %>
+            <% end %>
           </div>
         </div>
         <div class="row">

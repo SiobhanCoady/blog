@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # get('/posts/show', { to: 'posts#show' })
   resources :posts do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
 
   resources :users, only: [:new, :create, :edit, :update] do
