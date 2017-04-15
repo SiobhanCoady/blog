@@ -4,7 +4,12 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
 
-  resources :users, only: [:new, :create, :edit, :update]
+  resources :users, only: [:new, :create, :edit, :update] do
+    get :edit_password, on: :collection
+    patch :update_password, on: :collection
+    put :update_password, on: :collection
+  end
+
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end

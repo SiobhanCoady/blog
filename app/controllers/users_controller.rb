@@ -29,6 +29,35 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_password
+  end
+
+  def update_password
+    @user = User.find current_user.id
+    if @user.authenticate(params[:user][:old_password])
+      @user.old_password = params[:user][:old_password]
+      @user.new_password = params[:user][:new_password]
+      # Check that new password is not the same as old password
+      if @user.new_password_same_as_old?
+        flash[:alert] = 'New password must be different from old password'
+        redirect_to edit_password_users_path
+      else
+        if params[:user][:new_password] == params[:user][:new_password_confirmation]
+          @user.password = params[:user][:new_password]
+          @user.password_digest
+          @user.save
+          redirect_to root_path, notice: 'Password Updated'
+        else
+          flash[:alert] = 'New password does not match new password confirmation'
+          redirect_to edit_password_users_path
+        end
+      end
+    else
+      flash[:alert] = 'Wrong password entered'
+      redirect_to edit_password_users_path
+    end
+  end
+
   private
 
   def user_params

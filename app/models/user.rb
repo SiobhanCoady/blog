@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
 
+  attr_accessor :old_password
+  attr_accessor :new_password
+
   validates :first_name, presence: true
   validates :last_name, presence: true
 
@@ -14,10 +17,16 @@ class User < ApplicationRecord
   has_many :posts, dependent: :nullify
   has_many :comments, dependent: :nullify
 
+  def new_password_same_as_old?
+    puts "Old password: #{old_password}"
+    puts "New password: #{new_password}"
+    old_password == new_password
+  end
+
   private
 
-  def downcase_email
-    self.email.downcase! if email.present?
-  end
+    def downcase_email
+      self.email.downcase! if email.present?
+    end
 
 end

@@ -12,7 +12,7 @@ class Ability
       post.user == user
     end
 
-    can [:edit, :update], User do |u|
+    can [:edit, :update, :edit_password, :update_password], User do |u|
       u == user
     end
 
