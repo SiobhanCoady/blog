@@ -22,9 +22,9 @@
     <div class="col-lg-1 col-md-1 hidden-sm hidden-xs"></div>
     <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
       <%= @post.body %>
-
+      <br><br>
       <% if can? :edit, @post %>
-        <%= link_to "Edit", edit_post_path(@post) %>
+        <%= link_to "Edit", edit_post_path(@post) %> |
       <% end %>
       <% if can? :destroy, @post %>
         <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} %>
