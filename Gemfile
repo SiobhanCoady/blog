@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.4.0'
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -31,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'cancancan', '~> 1.10'
 
+gem 'faker'
+gem 'cowsay'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -43,8 +48,6 @@ group :development do
   gem 'interactive_editor'
   gem 'awesome_print'
   gem 'hirb'
-  gem 'faker'
-  gem 'cowsay'
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
