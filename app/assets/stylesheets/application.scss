@@ -1,0 +1,51 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 70px;
+}
+a > i, a > span {
+  color: black;
+}
+a > i {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.link {
+  margin-top: 5px;
+}
+.most-liked, .author-name {
+  margin-top: 0px;
+}
+.post-title {
+  margin-top: 0px;
+  padding-left: 10px;
+}
+.post-body {
+  padding: 10px;
+}
+.cat-date {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.post-info, .comment-info {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.author-info, .comment-padding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+label > h3 {
+  margin: 0px;
+}
+.no-form-lines {
+  border: none !important;
+}
+.hello-user {
+  padding-left: 15px;
+}
+.fill {
+  height: calc(100vh - 150px);
+  /*height: auto;*/
+}
