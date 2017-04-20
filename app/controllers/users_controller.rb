@@ -71,6 +71,7 @@ class UsersController < ApplicationController
                               expires_at: Time.now + 3.days })
 
       flash[:notice] = 'Email sent with password reset instructions'
+      UsersMailer.send_reset_password_link(@user, p.token).deliver_now
       # flash[:notice] = "Reset password at http://localhost:3000/users/user_password_reset?token=#{PasswordReset.last[:token]}"
       redirect_to root_path
     else
